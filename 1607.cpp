@@ -1,19 +1,23 @@
-#include<iostream>
+#include <iostream>
 
-int main(){
- int petya, petya_add, taxist, taxist_minus;
- std::cin >> petya >> petya_add >> taxist >> taxist_minus;
- while (true){
-    if (petya >= taxist){
-        std::cout << petya;
-        break;
-    }
-    petya += petya_add;
-    if (petya >= taxist){
-        std::cout << petya;
-        break;
-    }
-    taxist -= taxist_minus;
+int petya, petya_plus, taxi, taxi_plus;
 
- }
+using namespace std;
+
+void arrangement(){
+    while (petya <= taxi) {
+        petya += petya_plus;
+
+        if (petya > taxi) 
+            petya = taxi;
+
+        taxi -= taxi_plus;
+    }
+}
+
+int main() {
+    cin >> petya >> petya_plus >> taxi >> taxi_plus;
+    arrangement();
+    cout << petya << endl;
+    return 0;
 }
